@@ -1,4 +1,4 @@
-# Intelligent PDF RAG System
+# Retrieva-Local-Document-Retrieval-RAG-Based-QA-System
 
 A fully local PDF question-answering system (no paid APIs) with a two-phase evaluation:
 **retrieval-level** metrics (no LLM) and **application-level** metrics (LLM answers, an LLM judge, and RAGAS).
