@@ -1,0 +1,7 @@
+qid,question,answer,kept_pages,chunks_sent,chunks_removed,faithfulness,answer_relevancy,completeness,answer_correctness,context_precision,context_recall
+1,"Who led the Berkeley POSTGRES project, and which organizations sponsored it?","Professor Michael Stonebraker led the Berkeley POSTGRES project. The organizations that sponsored it were:
+
+1. Defense Advanced Research Projects Agency (DARPA)
+2. Army Research Office (ARO)
+3. National Science Foundation (NSF)
+4. ESL, Inc.","[2, 2, 2, 3, 2]",5,0,1.0,0.9274753709436552,1.0,0.9656050555225058,0.8874999999778125,1.0

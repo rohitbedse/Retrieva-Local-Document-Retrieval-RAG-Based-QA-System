@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Generated vector index (rebuilt by `python ingest.py`)
+chroma_db/
+
+# Logs
+*.log
+
+# Archived first version of the project
+old/
+
+# Secrets and local settings
+.env
+.streamlit/secrets.toml
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

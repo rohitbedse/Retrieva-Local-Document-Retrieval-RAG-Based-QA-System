@@ -1,0 +1,34 @@
+qid,question,answer,kept_pages,chunks_sent,chunks_removed,faithfulness,answer_relevancy,completeness,answer_correctness,context_precision,context_recall
+1,"Who led the Berkeley POSTGRES project, and which organizations sponsored it?","Professor Michael Stonebraker led the Berkeley POSTGRES project. The organizations that sponsored it were:
+
+1. Defense Advanced Research Projects Agency (DARPA)
+2. Army Research Office (ARO)
+3. National Science Foundation (NSF)
+4. ESL, Inc.","[2, 2, 2, 3, 2]",5,0,1.0,0.9274753709436552,1.0,0.9656050555225058,0.8874999999778125,1.0
+2,"When did implementation of POSTGRES begin, and which version marked the end of the Berkeley project?",The implementation of POSTGRES began in 1986. The Berkeley POSTGRES project officially ended with Version 4.2.,"[2, 2, 2, 3, 2]",5,0,1.0,0.8957663856501572,1.0,0.9958289170359558,0.8055555555287036,1.0
+3,"What did Andrew Yu and Jolly Chen do in 1994, and how much faster was Postgres95 1.0.x on the Wisconsin Benchmark?","In 1994, Andrew Yu and Jolly Chen added an SQL language interpreter to POSTGRES. Postgres95 1.0.x ran about 30–50% faster on the Wisconsin Benchmark compared to POSTGRES, Version 4.2.",[2],1,4,1.0,0.8455037913046196,1.0,0.6949388808055108,0.9999999999,1.0
+4,"Why was Postgres95 renamed PostgreSQL, and what version numbering did the renamed project start at?","According to the context, Postgres95 was renamed PostgreSQL to reflect the relationship between the original POSTGRES and the more recent versions with SQL capability. The renamed project, PostgreSQL, started version numbering at 6.0, putting the numbers back into the sequence originally begun by the Berkeley POSTGRES project.","[3, 2, 3, 2, 2]",5,0,1.0,0.0,1.0,0.6559592728241003,0.99999999998,1.0
+5,Which items should every PostgreSQL bug report contain?,"The following items should be contained in every bug report:
+
+1. The exact sequence of steps from program start-up necessary to reproduce the problem.
+2. A self-contained test case that can be run through the psql frontend.","[5, 4, 1, 7, 7]",5,0,1.0,0.8629754633551521,0.5,0.4508822820196726,0.9166666666361111,1.0
+6,"Where should a normal bug, a security-sensitive bug, and a documentation problem be reported, and which lists should NOT receive bug reports?","Here are the answers to the question:
+
+1. A normal bug should be reported to the bug report mailing list at <pgsql-bugs@lists.postgresql.org>.
+2. A security-sensitive bug should be reported privately to <security@postgresql.org>.
+3. A documentation problem should be reported to the documentation mailing list <pgsql-docs@lists.postgresql.org>.
+4. The following lists should NOT receive bug reports:
+   - pgsql-sql@lists.postgresql.org
+   - pgsql-general@lists.postgresql.org
+   - pgsql-hackers@lists.postgresql.org","[7, 7, 6, 5, 4]",5,0,1.0,0.0,1.0,0.7795243571061958,0.99999999998,1.0
+7,"How do you find the PostgreSQL version for a bug report, and what happens if your version is older than 18.7?","To find the PostgreSQL version for a bug report, you can use the --version option with the executable program, such as postgres --version or psql --version.
+
+If your version is older than 18.7, you will likely be told to upgrade, as there are many bug fixes and improvements in each new release, and it is possible that a bug you have encountered in an older release has already been fixed.","[6, 6, 7, 4, 6]",5,0,1.0,0.0,1.0,0.67971140549331,0.99999999995,1.0
+8,What are the rules for database names in PostgreSQL (first character and length)?,"According to page 12 of the context, the rules for database names in PostgreSQL are:
+
+1. Database names must have an alphabetic first character.
+2. Database names are limited to 63 bytes in length.","[12, 30, 15, 47, 41]",5,0,1.0,0.8589225035420686,1.0,0.9672682898883078,0.699999999965,1.0
+9,How does the PostgreSQL server handle multiple concurrent client connections?,The PostgreSQL server handles multiple concurrent client connections by starting a new process for each connection.,"[10, 10, 10, 1, 1]",5,0,1.0,1.0000000000000002,1.0,0.5808412371159075,0.9999999999666667,1.0
+10,"Why is COPY usually faster than INSERT for bulk loads, and where must the source file reside?","COPY is usually faster than INSERT for bulk loads because the COPY command is optimized for this application. 
+
+The source file must reside on the machine running the backend process, not the client.",[16],1,4,1.0,0.9330370961380526,1.0,0.9720478017431333,0.9999999999,1.0

@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+ollama
+chromadb
+pymupdf
+pytesseract
+pillow
+langchain-text-splitters
+rank_bm25
+sentence-transformers
+ragas>=0.4

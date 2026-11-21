@@ -1,0 +1,147 @@
+{
+  "settings": {
+    "EMBED_MODEL": "nomic-embed-text",
+    "GEN_MODEL": "llama3.2:3b",
+    "JUDGE_MODEL": "gemma3:4b",
+    "RERANK_MODEL": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "GEN_OPTIONS": {
+      "temperature": 0,
+      "num_ctx": 8192
+    },
+    "JUDGE_OPTIONS": {
+      "temperature": 0,
+      "num_ctx": 8192
+    },
+    "CHUNK_SIZE": 750,
+    "CHUNK_OVERLAP": 100,
+    "CANDIDATE_K": 20,
+    "FINAL_K": 5,
+    "RRF_K": 60,
+    "EMBED_BATCH": 32,
+    "MIN_TEXT_CHARS": 50,
+    "OCR_DPI": 200,
+    "SKIP_PAGES": [
+      8,
+      9,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "PDF_PATH": "data/eval/Rag_Eval.pdf",
+    "EVAL_CSV": "data/eval/rag_eval_30_v2.csv",
+    "CHROMA_DIR": "chroma_db",
+    "COLLECTION": "docs",
+    "RESULTS_DIR": "results",
+    "STRATEGIES": {
+      "A": [
+        "similarity",
+        false
+      ],
+      "B": [
+        "similarity",
+        true
+      ],
+      "C": [
+        "bm25",
+        true
+      ],
+      "D": [
+        "hybrid",
+        true
+      ]
+    },
+    "FIRST_UNANSWERABLE": 28,
+    "SMOKE_QUESTIONS": [
+      1,
+      11,
+      28
+    ],
+    "WORD_OVERLAP": 0.6,
+    "BEST_METRIC_NO_LLM": "mrr",
+    "BEST_METRIC_LLM": "answer_correctness",
+    "ABSTAIN_TEXT": "I could not find this in the uploaded documents.",
+    "SYSTEM_PROMPT": "Answer ONLY from the context. If the answer is not in the context, reply exactly: I could not find this in the uploaded documents. For list questions, include every item.",
+    "ANSWER_TEMPLATE": "Context:\n{context}\n\nQuestion: {question}",
+    "_JSON": " Reply with JSON only: {{\"label\": \"{labels}\", \"reason\": \"<one short line>\"}}",
+    "JUDGE_PROMPTS": {
+      "correctness": [
+        [
+          "correct",
+          "partial",
+          "wrong"
+        ],
+        "Question: {question}\nReference answer: {gold}\nModel answer: {answer}\nIs the model answer correct compared with the reference answer? Reply with JSON only: {{\"label\": \"{labels}\", \"reason\": \"<one short line>\"}}"
+      ],
+      "faithfulness": [
+        [
+          "yes",
+          "no"
+        ],
+        "Context:\n{context}\n\nAnswer: {answer}\nAre ALL claims in the answer supported by the context? Reply with JSON only: {{\"label\": \"{labels}\", \"reason\": \"<one short line>\"}}"
+      ],
+      "relevancy": [
+        [
+          "yes",
+          "no"
+        ],
+        "Question: {question}\nAnswer: {answer}\nDoes the answer address the question? Reply with JSON only: {{\"label\": \"{labels}\", \"reason\": \"<one short line>\"}}"
+      ],
+      "completeness": [
+        [
+          "yes",
+          "no"
+        ],
+        "Question: {question}\nReference answer: {gold}\nModel answer: {answer}\nDoes the model answer cover all items of the reference answer? Reply with JSON only: {{\"label\": \"{labels}\", \"reason\": \"<one short line>\"}}"
+      ],
+      "hallucination": [
+        [
+          "yes",
+          "no"
+        ],
+        "Context:\n{context}\n\nAnswer: {answer}\nDoes the answer contain any claim NOT supported by the context? Reply with JSON only: {{\"label\": \"{labels}\", \"reason\": \"<one short line>\"}}"
+      ]
+    },
+    "JUDGE_SCORES": {
+      "correct": 1.0,
+      "partial": 0.5,
+      "wrong": 0.0,
+      "yes": 1.0,
+      "no": 0.0
+    },
+    "SNAPSHOT_PACKAGES": [
+      "chromadb",
+      "pymupdf",
+      "ollama",
+      "sentence-transformers",
+      "rank-bm25",
+      "langchain-text-splitters",
+      "numpy",
+      "pandas",
+      "streamlit"
+    ]
+  },
+  "packages": {
+    "chromadb": "1.5.9",
+    "pymupdf": "1.28.2",
+    "ollama": "0.6.3",
+    "sentence-transformers": "6.3.0",
+    "rank-bm25": "0.2.2",
+    "langchain-text-splitters": "1.1.3",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "streamlit": "1.65.0"
+  },
+  "python": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "args": {
+    "strategies": "B",
+    "no_llm": false,
+    "smoke": true
+  },
+  "time": "2026-11-21T17:24:33.854167"
+}
